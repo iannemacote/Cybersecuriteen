@@ -175,3 +175,22 @@ footer {
         display: flex !important;
     }
 }
+/* Footer Styling */
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+    footer a {
+        color: #00aaff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
