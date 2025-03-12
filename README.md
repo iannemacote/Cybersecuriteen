@@ -1,2 +1,2 @@
 # Cybersecuriteen
-Cybersecurity awareness : Preventing Scammers and Cyber threat
+Cybersecurity awareness : Preventing Online Fraud and Cyber threat
