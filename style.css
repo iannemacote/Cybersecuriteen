@@ -205,3 +205,27 @@ nav {
     font-size: 2.5em;
     font-weight: bold;
     z-index: 9999;
+    animation: fadeOut 2.5s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
