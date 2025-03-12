@@ -239,3 +239,16 @@ footer {
     position: relative; /* Keeps footer at the bottom */
     width: 100%;
 }
+/* Make Footer Stick to Bottom */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
