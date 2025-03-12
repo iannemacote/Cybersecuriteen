@@ -5,48 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberSecuriTeen</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function showAlert(event) {
-            event.preventDefault(); // Prevent form submission
-            alert("Online database server hosting is on the way.");
-        }
-
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-    </script>
-    <style>
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 30%;
-            text-align: center;
-        }
-
-        .close {
-            float: right;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -67,42 +25,12 @@
             <li><a href="cyber-awareness.html">Cyber Awareness</a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="#" class="button" onclick="openModal('loginModal')">Login</a>
-            <a href="#" class="button signup-btn" onclick="openModal('signupModal')">Signup</a>
+            <a href="login.html" class="button">Login</a>
+            <a href="signup.html" class="button signup-btn">Signup</a>
         </div>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
     </nav>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('loginModal')">&times;</span>
-            <h2>Login</h2>
-            <form onsubmit="showAlert(event)">
-                <label for="login-username">Username:</label>
-                <input type="text" id="login-username" required><br><br>
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" required><br><br>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('signupModal')">&times;</span>
-            <h2>Signup</h2>
-            <form onsubmit="showAlert(event)">
-                <label for="signup-username">Username:</label>
-                <input type="text" id="signup-username" required><br><br>
-                <label for="signup-password">Password:</label>
-                <input type="password" id="signup-password" required><br><br>
-                <button type="submit">Signup</button>
-            </form>
-        </div>
-    </div>
 
     <!-- Main Section -->
     <section>
