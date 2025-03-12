@@ -25,8 +25,8 @@
             <li><a href="cyber-awareness.html">Cyber Awareness</a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="login.html" class="button">Login</a>
-            <a href="signup.html" class="button signup-btn">Signup</a>
+            <a href="#" class="button" onclick="notifyUnderDevelopment()">Login</a>
+            <a href="#" class="button signup-btn" onclick="notifyUnderDevelopment()">Signup</a>
         </div>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
@@ -51,3 +51,8 @@
     </footer>
 </body>
 </html>
+<script>
+    function notifyUnderDevelopment() {
+        alert("Login and Signup are under development.");
+    }
+</script>
