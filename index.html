@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>CyberSecuriTeen</h1>
         <p>Learn how your family can stay safe online and prevent cyber threats.</p>
+
+        <!-- Login/Signup Dropdown -->
+        <div class="login-container">
+            <button class="login-btn">Login/Signup</button>
+            <div class="dropdown-menu">
+                <a href="#">Login as Parent</a>
+                <a href="#">Login as Teen</a>
+                <a href="#">Signup as Parent</a>
+                <a href="#">Signup as Teen</a>
+            </div>
+        </div>
     </header>
 
+    <!-- Main Section -->
     <section>
         <h2>Preventing Cyber Threats</h2>
         <p>Always verify sources before providing personal information.</p>
@@ -20,13 +33,33 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 CyberSecuriTeen. All rights reserved.</p>
+        <p>&copy; 2024 CyberSecuriTeen. All rights reserved.</p>
         <p>
             Stay safe online! Follow us on
             <a href="#">Facebook</a> |
             <a href="#">Twitter</a> |
-            <a href="#">Instagram</a> |
+            <a href="#">Instagram</a>
         </p>
     </footer>
+
+    <script>
+        // Toggle Login Dropdown Menu
+        document.querySelector('.login-btn').addEventListener('click', function () {
+            document.querySelector('.dropdown-menu').classList.toggle('show-menu');
+        });
+
+        // Close menu when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.login-btn')) {
+                let dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        };
+    </script>
 </body>
 </html>
