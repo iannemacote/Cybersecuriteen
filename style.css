@@ -1,202 +1,50 @@
-﻿/* Login/Signup Button */
-.login-container {
-    position: absolute;
-    top: 20px;
-    right: 30px;
+﻿/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 2.5s;
 }
 
-.login-btn {
-    background: #0073e6;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    .login-btn:hover {
-        background: #005bb5;
-    }
-
-/* Dropdown Menu */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    right: 0;
+/* Center Main Content */
+section {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
     background: white;
+    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    min-width: 180px;
-    z-index: 1000;
+    text-align: center;
 }
 
-    .dropdown-menu a {
-        display: block;
+/* Centered Login & Signup Forms */
+.login-section, .signup-section {
+    width: 50%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    /* Form Inputs */
+    .login-section input, .signup-section input,
+    .login-section select, .signup-section select {
+        width: 100%;
         padding: 10px;
-        color: #0073e6;
-        text-decoration: none;
-        transition: 0.3s;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
         font-size: 1em;
     }
 
-        .dropdown-menu a:hover {
-            background: #f0f8ff;
-            color: #005bb5;
-        }
-
-/* Show Dropdown Menu */
-.show-menu {
-    display: block;
-}
-/* Login Section */
-.login-section {
-    width: 50%;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-    .login-section h2 {
-        color: #0073e6;
-    }
-
-    .login-section form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .login-section label {
-        width: 100%;
-        text-align: left;
-        margin-top: 10px;
-        font-weight: bold;
-    }
-
-    .login-section input, .login-section select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-.button {
-    margin-top: 15px;
-    background: #0073e6;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    .button:hover {
-        background: #005bb5;
-    }
-/* Signup Section */
-.signup-section {
-    width: 50%;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-    .signup-section h2 {
-        color: #0073e6;
-    }
-
-    .signup-section form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .signup-section label {
-        width: 100%;
-        text-align: left;
-        margin-top: 10px;
-        font-weight: bold;
-    }
-
-    .signup-section input, .signup-section select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-.button {
-    margin-top: 15px;
-    background: #0073e6;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    .button:hover {
-        background: #005bb5;
-    }
-/* Navigation Bar */
-nav {
-    background: #003366;
-    text-align: center;
-    padding: 10px 0;
-}
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        padding: 12px 20px;
-        font-size: 1.1em;
-        display: inline-block;
-        transition: 0.3s ease-in-out;
-    }
-
-        nav a:hover {
-            background: #0073e6;
-            border-radius: 5px;
-        }
-/* Auth Links (Login/Signup in Top Right) */
-.auth-links {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-}
-
-    .auth-links .button {
-        background: #0073e6;
-        color: white;
-        padding: 10px 15px;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-left: 10px;
-        transition: 0.3s;
-    }
-
-    .auth-links .signup-btn {
-        background: #00aaff;
-    }
-
-    .auth-links .button:hover {
-        background: #005bb5;
-    }
 /* Navigation Bar */
 nav {
     background: #003366;
@@ -219,9 +67,10 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 20px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
     .nav-links li {
@@ -241,6 +90,33 @@ nav {
             border-radius: 5px;
         }
 
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #003366;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    top: 35px;
+    left: 0;
+    min-width: 150px;
+}
+
+    .dropdown-menu li {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 15px;
+    }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Auth Links */
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -291,6 +167,29 @@ nav {
         display: block;
     }
 }
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+    .dark-mode nav {
+        background: #222;
+    }
+
+    .dark-mode .nav-links a {
+        color: #ffffff;
+    }
+
+    .dark-mode .dropdown-menu {
+        background: #222;
+    }
+
+    .dark-mode .button {
+        background: #0073e6;
+    }
+
 /* Animated Intro */
 .intro {
     position: fixed;
@@ -306,34 +205,3 @@ nav {
     font-size: 2.5em;
     font-weight: bold;
     z-index: 9999;
-    animation: fadeOut 2.5s ease-in-out forwards;
-    animation-delay: 3s;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-/* Fade-in Effect for Main Content */
-body {
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-    animation-delay: 2.5s;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
