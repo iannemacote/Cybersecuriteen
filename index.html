@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>CyberSecuriTeen</h1>
-        <p>Learn how your family can stay safe online and prevent cyber threats.</p>
-    </header>
-
     <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Signup</a>
+        <div class="logo">CyberSecuriTeen</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Cyber Threats</a></li>
+            <li><a href="#">Online Fraud</a></li>
+            <li><a href="#">Scam Prevention</a></li>
+            <li><a href="#">Cyber Awareness</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html" class="button">Login</a>
+            <a href="signup.html" class="button signup-btn">Signup</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </nav>
 
     <!-- Main Section -->
@@ -37,5 +41,11 @@
             <a href="#">Instagram</a>
         </p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show-menu');
+        }
+    </script>
 </body>
 </html>

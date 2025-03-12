@@ -197,3 +197,97 @@ nav {
     .auth-links .button:hover {
         background: #005bb5;
     }
+/* Navigation Bar */
+nav {
+    background: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+    .nav-links li {
+        display: inline;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 1.1em;
+        transition: 0.3s;
+    }
+
+        .nav-links a:hover {
+            background: #0073e6;
+            border-radius: 5px;
+        }
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background: #0073e6;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.signup-btn {
+    background: #00aaff;
+}
+
+.button:hover {
+    background: #005bb5;
+}
+
+/* Mobile Navigation */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #003366;
+        padding: 10px;
+        text-align: center;
+    }
+
+        .nav-links.show-menu {
+            display: flex;
+        }
+
+    .menu-icon {
+        display: block;
+    }
+}
