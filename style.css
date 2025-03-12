@@ -102,7 +102,7 @@ nav {
     list-style: none;
     padding: 10px;
     border-radius: 5px;
-    top: 100%; /* ✅ Positions dropdown directly below the parent */
+    top: 110%; /* ✅ Positions dropdown directly below the parent */
     left: 0; /* ✅ Aligns dropdown with parent item */
     min-width: 200px;
     z-index: 1000;

@@ -52,6 +52,48 @@
 
     <!-- ✅ FIXED: Script moved inside <body>, before </body> -->
     <script>
+        // Mobile Navigation Toggle with Close on Outside Click
+        function toggleMenu() {
+            let menu = document.querySelector('.nav-links');
+            menu.classList.toggle('show-menu');
+
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && !event.target.classList.contains("menu-icon")) {
+                    menu.classList.remove("show-menu");
+                }
+            });
+        }
+
+        // Dark Mode Toggle with Local Storage
+        function toggleDarkMode() {
+            let body = document.body;
+            let toggleIcon = document.querySelector('.dark-mode-toggle');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                toggleIcon.textContent = "☀️";
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                toggleIcon.textContent = "🌙";
+            }
+        }
+
+        // Load Dark Mode Preference
+        window.onload = function () {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.dark-mode-toggle').textContent = "☀️";
+            }
+
+            // Hide intro screen when page fully loads
+            let introScreen = document.querySelector('.intro');
+            if (introScreen) {
+                introScreen.style.display = 'none';
+            }
+        };
+
         // Mobile Navigation Toggle
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show-menu');
