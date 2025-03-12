@@ -12,18 +12,12 @@
         <h1>CyberSecuriTeen</h1>
         <p>Learn how your family can stay safe online and prevent cyber threats.</p>
 
-        <!-- Login/Signup Dropdown -->
-        <div class="login-container">
-            <button class="login-btn">Login/Signup</button>
-            <div class="dropdown-menu">
-                <a href="#">Login as Parent</a>
-                <a href="#">Login as Teen</a>
-                <a href="#">Signup as Parent</a>
-                <a href="#">Signup as Teen</a>
-            </div>
+        <!-- Login/Signup Buttons -->
+        <div class="auth-links">
+            <a href="login.html" class="button">Login</a>
+            <a href="signup.html" class="button signup-btn">Signup</a>
         </div>
     </header>
-
     <!-- Main Section -->
     <section>
         <h2>Preventing Cyber Threats</h2>
@@ -49,7 +43,7 @@
         });
 
         // Close menu when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (!event.target.matches('.login-btn')) {
                 let dropdowns = document.getElementsByClassName("dropdown-menu");
                 for (let i = 0; i < dropdowns.length; i++) {
@@ -63,3 +57,8 @@
     </script>
 </body>
 </html>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Signup</a>
+</nav>
