@@ -10,7 +10,23 @@
             event.preventDefault();
             alert("Online Database Server is not available at this moment, Try again in a few hours.");
         }
+
+        function toggleChildFields() {
+            var userType = document.getElementById("user-type").value;
+            var childFields = document.getElementById("child-fields");
+
+            if (userType === "parent") {
+                childFields.style.display = "block";
+            } else {
+                childFields.style.display = "none";
+            }
+        }
     </script>
+    <style>
+        #child-fields {
+            display: none; /* Hide child fields by default */
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -31,7 +47,7 @@
         <h2>Signup</h2>
         <form onsubmit="showAlert(event)">
             <label for="user-type">Sign up as:</label>
-            <select id="user-type" name="user-type">
+            <select id="user-type" name="user-type" onchange="toggleChildFields()">
                 <option value="parent">Parent</option>
                 <option value="teen">Teen</option>
             </select>
@@ -44,6 +60,15 @@
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+            <!-- Child Fields (Hidden for Teens) -->
+            <div id="child-fields">
+                <label for="child-name">Child's Name:</label>
+                <input type="text" id="child-name" name="child-name" placeholder="Enter your child's name">
+
+                <label for="child-email">Child's Email:</label>
+                <input type="email" id="child-email" name="child-email" placeholder="Enter your child's email">
+            </div>
 
             <button type="submit" class="button">Sign Up</button>
         </form>
