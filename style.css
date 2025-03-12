@@ -229,3 +229,13 @@ nav {
         opacity: 1;
     }
 }
+/* Footer Styling */
+footer {
+    background: #003366;
+    color: white;
+    text-align: center; /* ✅ Centers text */
+    padding: 15px;
+    font-size: 0.9em;
+    position: relative; /* Keeps footer at the bottom */
+    width: 100%;
+}
