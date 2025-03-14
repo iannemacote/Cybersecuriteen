@@ -46,6 +46,7 @@ section {
     }
 
 /* Navigation Bar */
+
 nav {
     background: #003366;
     color: white;
@@ -57,6 +58,8 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
+   
+
 }
 
 .logo {
@@ -283,3 +286,14 @@ footer {
         .social-icons img:hover {
             transform: scale(1.2);
         }
+/* Style for navigation links */
+nav a {
+    color: white; /* Default font color */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+    nav a:hover {
+        color: yellow; /* Change color on hover */
+    }
