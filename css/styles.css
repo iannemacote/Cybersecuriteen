@@ -53,8 +53,76 @@ button {
         background: green;
         color: white;
     }
+.email-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.email-header {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.email-address {
+    color: red;
+    font-weight: bold;
+}
+
+.email-body {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.phishing-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+    .phishing-link:hover {
+        color: red;
+    }
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#report-phishing {
+    background: red;
+    color: white;
+}
+
+#trust-email {
+    background: green;
+    color: white;
+}
 
 #feedback {
-    font-weight: bold;
+    font-size: 18px;
     margin-top: 15px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
