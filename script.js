@@ -1,34 +1,29 @@
-﻿// Toggle Mobile Menu
-function toggleMenu() {
-    let navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("show-menu");
-}
+﻿document.addEventListener("DOMContentLoaded", function () {
+    function checkPhishing(isPhishing) {
+        let feedback = document.getElementById("feedback");
 
-// Toggle Dark Mode
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+        if (!feedback) {
+            console.error("Element with ID 'feedback' not found!");
+            return;
+        }
 
-    // Save dark mode preference
-    let isDarkMode = document.body.classList.contains("dark-mode");
-    localStorage.setItem("darkMode", isDarkMode);
-}
-
-// Apply dark mode if previously enabled
-document.addEventListener("DOMContentLoaded", function () {
-    if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark-mode");
+        if (isPhishing) {
+            feedback.innerHTML = "✅ Correct! This email is a phishing attempt. <br> 🔹 The sender's email looks suspicious. <br> 🔹 The link could lead to a fake website. <br> 🔹 The email creates urgency to trick you.";
+            feedback.style.color = "green";
+        } else {
+            feedback.innerHTML = "❌ Incorrect! This is a phishing email. <br> Always check sender addresses and avoid clicking unknown links.";
+            feedback.style.color = "red";
+        }
     }
 
-    // Toggle Dropdown for Mobile
-    let dropdowns = document.querySelectorAll(".dropdown > a");
+    // Attach event listeners to buttons
+    let reportButton = document.getElementById("report-phishing");
+    let trustButton = document.getElementById("trust-email");
 
-    dropdowns.forEach(function (dropdown) {
-        dropdown.addEventListener("click", function (event) {
-            event.preventDefault();
-            let menu = this.nextElementSibling;
-            if (menu) {
-                menu.classList.toggle("show-dropdown");
-            }
-        });
-    });
+    if (reportButton && trustButton) {
+        reportButton.addEventListener("click", function () { checkPhishing(true); });
+        trustButton.addEventListener("click", function () { checkPhishing(false); });
+    } else {
+        console.error("Buttons not found! Check your HTML IDs.");
+    }
 });
