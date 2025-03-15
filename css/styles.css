@@ -1,0 +1,65 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Email Simulation Box */
+.email-container {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Feedback Animation */
+#feedback {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+    animation: fadeIn 1s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .email-container {
+        width: 90%;
+    }
+
+    .email-body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .email-container {
+        width: 95%;
+    }
+
+    .email-body {
+        font-size: 13px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

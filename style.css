@@ -10,202 +10,86 @@ body {
     animation-delay: 2.5s;
 }
 
-/* Center Main Content */
-section {
-    width: 80%;
+/* Responsive Layout */
+.container {
+    width: 90%;
     max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    margin: auto;
 }
-
-/* Centered Login & Signup Forms */
-.login-section, .signup-section {
-    width: 50%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-    /* Form Inputs */
-    .login-section input, .signup-section input,
-    .login-section select, .signup-section select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1em;
-    }
 
 /* Navigation Bar */
-
 nav {
     background: #003366;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 15px 20px;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-   
-
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0 auto;
-}
-
-    .nav-links li {
-        display: inline;
-    }
-
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        font-size: 1.1em;
-        transition: 0.3s;
-    }
-
-        .nav-links a:hover {
-            background: #0073e6;
-            border-radius: 5px;
-        }
-
-/* Fix Dropdown Position */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: #003366;
-    list-style: none;
-    padding: 10px;
-    border-radius: 5px;
-    top: 110%; /* ✅ Positions dropdown directly below the parent */
-    left: 0; /* ✅ Aligns dropdown with parent item */
-    min-width: 200px;
-    z-index: 1000;
-}
-
-    .dropdown-menu li {
-        display: block;
-    }
-
-    .dropdown-menu a {
-        display: block;
-        padding: 8px 15px;
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-        .dropdown-menu a:hover {
-            background: #0073e6;
-        }
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-
-/* Auth Links */
-.auth-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.button {
-    background: #0073e6;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.signup-btn {
-    background: #00aaff;
-}
-
-.button:hover {
-    background: #005bb5;
 }
 
 /* Mobile Navigation */
-.menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #003366;
+@media screen and (max-width: 768px) {
+    nav {
+        text-align: center;
         padding: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
         text-align: center;
     }
 
-        .nav-links.show-menu {
-            display: flex;
+        .nav-links a {
+            display: block;
+            padding: 10px;
         }
+}
 
-    .menu-icon {
-        display: block;
+/* Forms */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
-/* Dark Mode */
-.dark-mode {
-    background: #121212;
-    color: #ffffff;
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
-
-    .dark-mode nav {
-        background: #222;
-    }
-
-    .dark-mode .nav-links a {
-        color: #ffffff;
-    }
-
-    .dark-mode .dropdown-menu {
-        background: #222;
-    }
-
-    .dark-mode .button {
-        background: #0073e6;
-    }
 
 /* Animated Intro */
 .intro {
@@ -226,74 +110,11 @@ nav {
     animation-delay: 3s;
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-/* Footer Styling */
+/* Footer */
 footer {
     background: #003366;
     color: white;
-    text-align: center; /* ✅ Centers text */
+    text-align: center;
     padding: 15px;
-    font-size: 0.9em;
-    position: relative; /* Keeps footer at the bottom */
     width: 100%;
 }
-/* Make Footer Stick to Bottom */
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    margin-top: auto;
-}
-
-/* Social Media Icons Styling */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-    .social-icons img {
-        width: 30px;
-        transition: 0.3s;
-    }
-
-        .social-icons img:hover {
-            transform: scale(1.2);
-        }
-/* Style for navigation links */
-nav a {
-    color: white; /* Default font color */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-}
-
-    nav a:hover {
-        color: yellow; /* Change color on hover */
-    }
