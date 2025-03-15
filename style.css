@@ -5,7 +5,45 @@ body {
     padding: 0;
     background-color: #f0f8ff;
     color: #333;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 2.5s;
 }
+
+/* Center Main Content */
+section {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Centered Login & Signup Forms */
+.login-section, .signup-section {
+    width: 50%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    /* Form Inputs */
+    .login-section input, .signup-section input,
+    .login-section select, .signup-section select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+    }
 
 /* Navigation Bar */
 nav {
@@ -21,22 +59,117 @@ nav {
     z-index: 1000;
 }
 
-/* Navigation Links */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 20px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
-/* Hide navigation menu by default on mobile */
-@media screen and (max-width: 768px) {
+    .nav-links li {
+        display: inline;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 1.1em;
+        transition: 0.3s;
+    }
+
+        .nav-links a:hover {
+            background: #0073e6;
+            border-radius: 5px;
+        }
+
+/* Fix Dropdown Position */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #003366;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%; /* ✅ Positions dropdown directly below the parent */
+    left: 0; /* ✅ Aligns dropdown with parent item */
+    min-width: 200px;
+    z-index: 1000;
+}
+
+    .dropdown-menu li {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 15px;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .dropdown-menu a:hover {
+            background: #0073e6;
+        }
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Auth Links */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background: #0073e6;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.signup-btn {
+    background: #00aaff;
+}
+
+.button:hover {
+    background: #005bb5;
+}
+
+/* Mobile Navigation */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
-        background: #003366;
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
+        background: #003366;
+        padding: 10px;
         text-align: center;
     }
 
@@ -49,50 +182,87 @@ nav {
     }
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: #003366;
-    list-style: none;
-    padding: 10px;
-    border-radius: 5px;
-    top: 100%;
+    .dark-mode nav {
+        background: #222;
+    }
+
+    .dark-mode .nav-links a {
+        color: #ffffff;
+    }
+
+    .dark-mode .dropdown-menu {
+        background: #222;
+    }
+
+    .dark-mode .button {
+        background: #0073e6;
+    }
+
+/* Animated Intro */
+.intro {
+    position: fixed;
+    top: 0;
     left: 0;
-    z-index: 1000;
-}
-
-    .dropdown-menu.show-dropdown {
-        display: block;
-    }
-
-@media screen and (max-width: 768px) {
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* Mobile Menu Icon */
-.menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
+    width: 100%;
+    height: 100vh;
+    background: #003366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    z-index: 9999;
+    animation: fadeOut 2.5s ease-in-out forwards;
+    animation-delay: 3s;
 }
 
-/* Social Media Icons */
-.social-icons img {
-    width: 30px;
-}
-
-@media screen and (max-width: 480px) {
-    .social-icons img {
-        width: 20px;
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
     }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/* Footer Styling */
+footer {
+    background: #003366;
+    color: white;
+    text-align: center; /* ✅ Centers text */
+    padding: 15px;
+    font-size: 0.9em;
+    position: relative; /* Keeps footer at the bottom */
+    width: 100%;
+}
+/* Make Footer Stick to Bottom */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
 }
