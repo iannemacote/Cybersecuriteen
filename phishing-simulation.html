@@ -11,42 +11,27 @@
         <h2>Phishing Email Simulation</h2>
         <p>Analyze the email below and decide if it's legitimate or a phishing attempt.</p>
 
-        <div class="email-box">
-            <p><strong>From:</strong> support@paypal-security.com</p>
-            <p><strong>Subject:</strong> Urgent: Your Account is Suspended!</p>
-            <p>Dear User,</p>
-            <p>We have detected suspicious activity on your PayPal account. To restore access, please click the link below and verify your details:</p>
-            <p><a href="#" id="fake-link">Click Here to Verify</a></p>
-            <p>Failure to act within 24 hours will result in account suspension.</p>
-            <p>Best, <br> PayPal Security Team</p>
+        <div class="email-container">
+            <h2>Suspicious Email</h2>
+            <div class="email-header">
+                <p><strong>From:</strong> PayPal Security <span class="email-address">&lt;security-paypal@fraudmail.com&gt;</span></p>
+                <p><strong>Subject:</strong> Urgent: Your Account is Suspended!</p>
+            </div>
+            <div class="email-body">
+                <p>Dear Customer,</p>
+                <p>We have detected unusual activity in your account. Please <a href="#" class="phishing-link">click here</a> to verify your details immediately, or your account will be locked.</p>
+                <p>Thank you,<br>PayPal Security Team</p>
+            </div>
+            <div class="buttons">
+                <button id="report-phishing">Report as Phishing</button>
+                <button id="trust-email">Trust This Email</button>
+            </div>
+            <p id="feedback"></p>
         </div>
-
-        <div class="buttons">
-            <button onclick="checkPhishing(true)">Report as Phishing</button>
-            <button onclick="checkPhishing(false)">Trust This Email</button>
-        </div>
-
-        <p id="feedback"></p>
     </div>
 
     <script src="js/script.js"></script>
-    <div class="email-container">
-        <h2>Suspicious Email</h2>
-        <div class="email-header">
-            <p><strong>From:</strong> PayPal Security <span class="email-address">&lt;security-paypal@fraudmail.com&gt;</span></p>
-            <p><strong>Subject:</strong> Urgent: Your Account is Suspended!</p>
-        </div>
-        <div class="email-body">
-            <p>Dear Customer,</p>
-            <p>We have detected unusual activity in your account. Please <a href="#" class="phishing-link">click here</a> to verify your details immediately, or your account will be locked.</p>
-            <p>Thank you,<br>PayPal Security Team</p>
-        </div>
-        <div class="buttons">
-            <button id="report-phishing">Report as Phishing</button>
-            <button id="trust-email">Trust This Email</button>
-        </div>
-        <p id="feedback"></p>
-    </div>
+   
 
 </body>
 </html>
