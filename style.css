@@ -277,3 +277,30 @@ nav a {
     nav a:hover {
         color: yellow; /* Change color on hover */
     }
+/* for footer*/
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Reduce space between icons */
+    margin-top: 10px;
+}
+
+    .social-icons img {
+        width: 25px; /* Smaller default size */
+        height: auto;
+        transition: 0.3s;
+    }
+
+/* Make icons even smaller on mobile */
+@media screen and (max-width: 768px) {
+    .social-icons img {
+        width: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-icons img {
+        width: 18px;
+    }
+}
