@@ -18,10 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("darkMode") === "true") {
         document.body.classList.add("dark-mode");
     }
-});
 
-// Toggle Dropdown for Mobile
-document.addEventListener("DOMContentLoaded", function () {
+    // Toggle Dropdown for Mobile
     let dropdowns = document.querySelectorAll(".dropdown > a");
 
     dropdowns.forEach(function (dropdown) {

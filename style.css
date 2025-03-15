@@ -21,6 +21,7 @@ nav {
     z-index: 1000;
 }
 
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -29,30 +30,10 @@ nav {
     margin: 0;
 }
 
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        font-size: 1.1em;
-        transition: 0.3s;
-    }
-
-        .nav-links a:hover {
-            background: #0073e6;
-            border-radius: 5px;
-        }
-
-/* Mobile Navigation */
-.menu-icon {
-  
-    font-size: 2em;
-    cursor: pointer;
-    color: white;
-}
-
+/* Hide navigation menu by default on mobile */
 @media screen and (max-width: 768px) {
     .nav-links {
-       
+        display: none;
         flex-direction: column;
         background: #003366;
         width: 100%;
@@ -69,8 +50,12 @@ nav {
 }
 
 /* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
-  
+    display: none;
     position: absolute;
     background: #003366;
     list-style: none;
@@ -91,6 +76,14 @@ nav {
         width: 100%;
         text-align: center;
     }
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
 }
 
 /* Social Media Icons */
