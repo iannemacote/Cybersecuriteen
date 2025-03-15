@@ -17,10 +17,13 @@ body {
     margin: auto;
 }
 
-/* Navigation Bar */
+/* 🔹 Navigation Bar (Fixed) */
 nav {
     background: #003366;
     color: white;
+    display: flex; /* Ensure nav items are aligned */
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 20px;
     position: sticky;
     top: 0;
@@ -28,7 +31,42 @@ nav {
     z-index: 1000;
 }
 
-/* Mobile Navigation */
+/* 🔹 Navigation Links (Fixed) */
+.nav-links {
+    list-style: none;
+    display: flex; /* Ensure links are visible */
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+    .nav-links li {
+        display: inline;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 1.1em;
+        transition: 0.3s;
+    }
+
+        .nav-links a:hover {
+            background: #0073e6;
+            border-radius: 5px;
+        }
+
+/* 🔹 Mobile Menu Styling */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+}
+
+/* 🔹 Mobile Navigation Fix */
 @media screen and (max-width: 768px) {
     nav {
         text-align: center;
@@ -36,17 +74,24 @@ nav {
     }
 
     .nav-links {
-        display: flex;
+        display: none; /* Hide by default */
         flex-direction: column;
-        padding: 0;
-        margin: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #003366;
+        padding: 10px;
         text-align: center;
     }
 
-        .nav-links a {
-            display: block;
-            padding: 10px;
+        .nav-links.show-menu {
+            display: flex; /* Show when toggled */
         }
+
+    .menu-icon {
+        display: block; /* Show menu button on mobile */
+    }
 }
 
 /* Forms */
@@ -118,11 +163,13 @@ footer {
     padding: 15px;
     width: 100%;
 }
+
 @media screen and (max-width: 768px) {
     footer {
         font-size: 14px;
     }
 }
+
 /* Ensure all images scale properly on mobile */
 img {
     max-width: 100%;
@@ -130,5 +177,3 @@ img {
     display: block;
     margin: auto;
 }
-
-
