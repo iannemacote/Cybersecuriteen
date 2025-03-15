@@ -5,19 +5,9 @@ body {
     padding: 0;
     background-color: #f0f8ff;
     color: #333;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-    animation-delay: 2.5s;
 }
 
-/* Responsive Layout */
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-}
-
-/* 🔹 Navigation Bar (Fixed) */
+/* Navigation Bar */
 nav {
     background: #003366;
     color: white;
@@ -31,20 +21,13 @@ nav {
     z-index: 1000;
 }
 
-/* 🔹 Navigation Links (Fixed) */
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
     padding: 0;
     margin: 0;
 }
-
-    .nav-links li {
-        position: relative;
-        display: inline-block;
-    }
 
     .nav-links a {
         color: white;
@@ -59,42 +42,7 @@ nav {
             border-radius: 5px;
         }
 
-/* 🔹 Dropdown Menu Styling */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: #003366;
-    list-style: none;
-    padding: 10px;
-    border-radius: 5px;
-    top: 100%;
-    left: 0;
-    min-width: 200px;
-    z-index: 1000;
-}
-
-    .dropdown-menu li {
-        display: block;
-    }
-
-    .dropdown-menu a {
-        display: block;
-        padding: 8px 15px;
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-        .dropdown-menu a:hover {
-            background: #0073e6;
-        }
-
-/* 🔹 Show dropdown when hovering */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* 🔹 Mobile Navigation Fix */
+/* Mobile Navigation */
 .menu-icon {
     display: none;
     font-size: 2em;
@@ -103,20 +51,11 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-    nav {
-        text-align: center;
-        padding: 10px;
-    }
-
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
         background: #003366;
-        padding: 10px;
+        width: 100%;
         text-align: center;
     }
 
@@ -127,56 +66,40 @@ nav {
     .menu-icon {
         display: block;
     }
+}
 
-    /* Mobile Dropdown Fix */
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #003366;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+    .dropdown-menu.show-dropdown {
+        display: block;
+    }
+
+@media screen and (max-width: 768px) {
     .dropdown-menu {
         position: static;
-        display: none;
-        background: #003366;
         width: 100%;
         text-align: center;
     }
-
-    .dropdown.show-dropdown .dropdown-menu {
-        display: block;
-    }
 }
 
-/* 🔹 Social Media Icons Styling */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-    .social-icons img {
-        width: 30px; /* Default size */
-        height: auto;
-        transition: 0.3s;
-    }
-
-        .social-icons img:hover {
-            transform: scale(1.2);
-        }
-
-/* 🔹 Reduce size on smaller screens */
-@media screen and (max-width: 768px) {
-    .social-icons img {
-        width: 25px;
-    }
+/* Social Media Icons */
+.social-icons img {
+    width: 30px;
 }
 
 @media screen and (max-width: 480px) {
     .social-icons img {
         width: 20px;
     }
-}
-
-/* 🔹 Ensure all images scale properly */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
 }

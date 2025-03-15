@@ -1,31 +1,36 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
-    function checkPhishing(isPhishing) {
-        let feedback = document.getElementById("feedback");
+﻿// Toggle Mobile Menu
+function toggleMenu() {
+    let navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("show-menu");
+}
 
-        if (!feedback) {
-            console.error("Element with ID 'feedback' not found!");
-            return;
-        }
+// Toggle Dark Mode
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
 
-        if (isPhishing) {
-            feedback.innerHTML = "✅ Correct! This email is a phishing attempt. <br> 🔹 Suspicious sender address <br> 🔹 Urgent action request <br> 🔹 Fake link";
-            feedback.style.color = "green";
-            feedback.style.animation = "fadeIn 1s";
-        } else {
-            feedback.innerHTML = "❌ Incorrect! This is a phishing email. Be cautious of urgent requests.";
-            feedback.style.color = "red";
-            feedback.style.animation = "fadeIn 1s";
-        }
+    // Save dark mode preference
+    let isDarkMode = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+}
+
+// Apply dark mode if previously enabled
+document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
     }
+});
 
-    // Attach event listeners to buttons
-    let reportButton = document.getElementById("report-phishing");
-    let trustButton = document.getElementById("trust-email");
+// Toggle Dropdown for Mobile
+document.addEventListener("DOMContentLoaded", function () {
+    let dropdowns = document.querySelectorAll(".dropdown > a");
 
-    if (reportButton && trustButton) {
-        reportButton.addEventListener("click", function () { checkPhishing(true); });
-        trustButton.addEventListener("click", function () { checkPhishing(false); });
-    } else {
-        console.error("Buttons not found! Check your HTML IDs.");
-    }
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener("click", function (event) {
+            event.preventDefault();
+            let menu = this.nextElementSibling;
+            if (menu) {
+                menu.classList.toggle("show-dropdown");
+            }
+        });
+    });
 });
