@@ -21,7 +21,7 @@ body {
 nav {
     background: #003366;
     color: white;
-    display: flex; /* Ensure nav items are aligned */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
@@ -34,7 +34,7 @@ nav {
 /* 🔹 Navigation Links (Fixed) */
 .nav-links {
     list-style: none;
-    display: flex; /* Ensure links are visible */
+    display: flex;
     justify-content: center;
     gap: 20px;
     padding: 0;
@@ -42,7 +42,8 @@ nav {
 }
 
     .nav-links li {
-        display: inline;
+        position: relative;
+        display: inline-block;
     }
 
     .nav-links a {
@@ -58,130 +59,7 @@ nav {
             border-radius: 5px;
         }
 
-/* 🔹 Mobile Menu Styling */
-.menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
-    color: white;
-}
-
-/* 🔹 Mobile Navigation Fix */
-@media screen and (max-width: 768px) {
-    nav {
-        text-align: center;
-        padding: 10px;
-    }
-
-    .nav-links {
-        display: none; /* Hide by default */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #003366;
-        padding: 10px;
-        text-align: center;
-    }
-
-        .nav-links.show-menu {
-            display: flex; /* Show when toggled */
-        }
-
-    .menu-icon {
-        display: block; /* Show menu button on mobile */
-    }
-}
-
-/* Forms */
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-/* Buttons */
-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-/* Animated Intro */
-.intro {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #003366;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2.5em;
-    font-weight: bold;
-    z-index: 9999;
-    animation: fadeOut 2.5s ease-in-out forwards;
-    animation-delay: 3s;
-}
-
-/* Footer */
-footer {
-    background: #003366;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    footer {
-        font-size: 14px;
-    }
-}
-
-/* Ensure all images scale properly on mobile */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-}
 /* 🔹 Dropdown Menu Styling */
-.dropdown {
-    position: relative;
-}
-
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -189,8 +67,8 @@ img {
     list-style: none;
     padding: 10px;
     border-radius: 5px;
-    top: 100%; /* Positions dropdown below parent */
-    left: 0; /* Aligns dropdown with parent item */
+    top: 100%;
+    left: 0;
     min-width: 200px;
     z-index: 1000;
 }
@@ -216,8 +94,41 @@ img {
     display: block;
 }
 
-/* 🔹 Mobile Dropdown Fix */
+/* 🔹 Mobile Navigation Fix */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
+    nav {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #003366;
+        padding: 10px;
+        text-align: center;
+    }
+
+        .nav-links.show-menu {
+            display: flex;
+        }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /* Mobile Dropdown Fix */
     .dropdown-menu {
         position: static;
         display: none;
@@ -226,10 +137,11 @@ img {
         text-align: center;
     }
 
-    .dropdown:hover .dropdown-menu {
+    .dropdown.show-dropdown .dropdown-menu {
         display: block;
     }
 }
+
 /* 🔹 Social Media Icons Styling */
 .social-icons {
     display: flex;
@@ -251,12 +163,20 @@ img {
 /* 🔹 Reduce size on smaller screens */
 @media screen and (max-width: 768px) {
     .social-icons img {
-        width: 25px; /* Smaller icons for mobile */
+        width: 25px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .social-icons img {
-        width: 20px; /* Even smaller icons on tiny screens */
+        width: 20px;
     }
+}
+
+/* 🔹 Ensure all images scale properly */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
