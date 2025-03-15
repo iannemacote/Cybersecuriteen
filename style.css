@@ -44,7 +44,7 @@ nav {
 
 /* Mobile Navigation */
 .menu-icon {
-    display: none;
+  
     font-size: 2em;
     cursor: pointer;
     color: white;
@@ -52,7 +52,7 @@ nav {
 
 @media screen and (max-width: 768px) {
     .nav-links {
-        display: none;
+       
         flex-direction: column;
         background: #003366;
         width: 100%;
@@ -70,7 +70,7 @@ nav {
 
 /* Dropdown Menu */
 .dropdown-menu {
-    display: none;
+  
     position: absolute;
     background: #003366;
     list-style: none;
