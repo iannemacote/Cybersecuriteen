@@ -177,3 +177,86 @@ img {
     display: block;
     margin: auto;
 }
+/* 🔹 Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #003366;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%; /* Positions dropdown below parent */
+    left: 0; /* Aligns dropdown with parent item */
+    min-width: 200px;
+    z-index: 1000;
+}
+
+    .dropdown-menu li {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 15px;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .dropdown-menu a:hover {
+            background: #0073e6;
+        }
+
+/* 🔹 Show dropdown when hovering */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 🔹 Mobile Dropdown Fix */
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: #003366;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+/* 🔹 Social Media Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+    .social-icons img {
+        width: 30px; /* Default size */
+        height: auto;
+        transition: 0.3s;
+    }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+/* 🔹 Reduce size on smaller screens */
+@media screen and (max-width: 768px) {
+    .social-icons img {
+        width: 25px; /* Smaller icons for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-icons img {
+        width: 20px; /* Even smaller icons on tiny screens */
+    }
+}
